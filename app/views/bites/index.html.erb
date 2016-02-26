@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>What's on Your Plate?</h1>
+  <h4>Meet your bunch for lunch</h4>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <% @b.each do |x| %>
+              <%= x.message %>
+              <strong><%= x.user.username %></strong>
+        <p>
+              <%= link_to 'Show', x , class: "btn btn-success"%>
+              <%= link_to 'Edit', edit_tweet_path(x), class: "btn btn-info" %>
+              <%= link_to 'Delete', x, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-warning"%> </p>
+            <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <p><h6> Are you bitter about something?
+        <%= link_to 'Create a New Tweet', new_tweet_path %></p></h6>
