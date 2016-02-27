@@ -1,7 +1,7 @@
 class BitesController < ApplicationController
 
   resources :bites
-  before_action :set_bite, only [:show, :edit, :update, :destroy]
+  before_action :set_bite, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!
 
@@ -38,7 +38,6 @@ end
             format.html { redirect_to @bite, notice: 'Post was successfully updated.' }
         else
           format.html { render :edit }
-
         end
       end
     end
@@ -76,5 +75,5 @@ end
     def bite_params
       params.require(:bite).permit(:message, :user_id)
     end
-
+  end
 end
