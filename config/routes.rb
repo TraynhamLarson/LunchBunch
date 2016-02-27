@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  resources :bites
+  resources :bite
   devise_for :users
 
-  get 'show' => 'bites/show'
+  get 'show' => 'bite#show'
 
-  get 'new' => 'bites/new'
+  get 'new' => 'bite#new'
 
-  get 'edit' => 'bites/edit'
+  get 'edit' => 'bite#edit'
 
-  root 'bites#index'
+  root 'bite#index'
 end
