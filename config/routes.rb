@@ -18,4 +18,5 @@ resources :relationships
   get "edit" => "bite#edit"
 
   root "bites#index"
+
 end

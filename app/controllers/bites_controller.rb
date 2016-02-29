@@ -57,4 +57,5 @@ end
       params.require(:bite).permit(:message, :user_id)
     end
 end
+
 end

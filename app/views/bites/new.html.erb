@@ -6,6 +6,7 @@
       <h2>Wait. What the fork just happened?</h2>
         <h3><%= pluralize(@bite.errors.count, "error") %> prohibited this bite from being saved:</h3>
 
+
       <ul>
         <% @bite.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -25,5 +26,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+
 <%= link_to 'Back', bites_path %>
