@@ -1,9 +1,9 @@
 class ProfilesController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @users = Users.all
   end
 
   def index
-    @users = User.all
+    @user = User.find(params[:id])
   end
 end

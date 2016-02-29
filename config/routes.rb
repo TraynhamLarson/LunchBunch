@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
   resources :restaurants
-  resources :bites
   devise_for :users
-
-  get 'profiles/:id' => 'profiles#show'
-
-  get 'profiles' => 'profiles#index'
 
   get 'restaurants' => 'restaurants#index'
 
+  get "profiles/:id" => "profiles#show", as: :profile
 
-  get 'show' => 'bites/show'
+  get "profiles" => "profiles#index"
 
-  get 'new' => 'bites/new'
+  resources :bites do
+  resource :like
+end
 
-  get 'edit' => 'bites/edit'
+resources :relationships
 
-  root 'bites#index'
+  root "bites#index"
 end
