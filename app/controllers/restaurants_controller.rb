@@ -37,6 +37,7 @@ class RestaurantsController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
