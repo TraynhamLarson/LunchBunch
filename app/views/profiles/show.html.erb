@@ -24,6 +24,7 @@
 
   <div class= "col-xs-7">
     <div class="panel panel-default">
+
       <% @user.bites.each do |bite| %>
         <div class="panel-body">
         <strong><%= bite.user.username %> </strong><small>bite <%= time_ago_in_words(bite.created_at) %> ago</small>

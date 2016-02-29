@@ -12,13 +12,14 @@ def create
       format.html {redirect_to @bite, notice: 'Bite was sucessfully created.' }
     else
     format.html {render :new }
+    end
   end
   end
 end
 
     def update
       respond_to do |format|
-          if @bite.update(bite_params)
+        if @bite.update(bite_params)
             format.html { redirect_to @bite, notice: 'Post was successfully updated.' }
         else
           format.html { render :edit }
