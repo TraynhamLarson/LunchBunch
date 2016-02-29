@@ -1,5 +1,5 @@
-class BiteController < ApplicationController
-  resources :bite
+class BitesController < ApplicationController
+
   before_action :set_bite, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!
@@ -14,22 +14,6 @@ def create
     format.html {render :new }
   end
 end
-
-
-  before_action :set_bite, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
-
-    def create
-      @bite = Bite.new(bite_params)
-
-      respond_to do |format|
-        if @bite.save
-          format.html { redirect_to @bite, notice: 'insert pun here.' }
-        else
-          format.html { render :new }
-        end
-      end
-    end
 
     def update
       respond_to do |format|
@@ -62,8 +46,6 @@ end
       @bite = Bite.new
     end
 
-    def form
-    end
 
   private
 
