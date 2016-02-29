@@ -1,25 +1,15 @@
 <h1>LunchBunch</h1>
 <p id="notice"><%= notice %></p>
 
-<h3>Bringing Social Networking Back to the Table</h3>
+<h2>Bringing Social Networking Back to the Table</h2>
+<h3>See what the rest of the bunch is doing for lunch</h3>
+    <p><% @b.each do |x| %>
+        <%= x.message %>
+        <%= x.user.username %></p>
+        <p><%= link_to 'Show', x %>
+        <%= link_to 'Edit', edit_bite_path(x) %>
+        <%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @b.each do |x| %>
-      <tr>
-        <td><%= x.message %></td>
-        <td><%= x.user.username %></td>
-        <td><%= link_to 'Show', x %></td>
-        <td><%= link_to 'Edit', edit_bite_path(x) %></td>
-        <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
   </tbody>
 </table>
