@@ -2,11 +2,21 @@ Rails.application.routes.draw do
   resources :bite
   devise_for :users
 
-  get 'show' => 'bite#show'
+  get "profiles/:id" => "profiles#show", as: :profile
 
-  get 'new' => 'bite#new'
+  get "profiles" => "profiles#index"
 
-  get 'edit' => 'bite#edit'
+  resources :bite do
+  resources :like
+end
 
-  root 'bite#index'
+resources: relationships
+
+  get "show" => "bite#show"
+
+  get "new" => "bite#new"
+
+  get "edit" => "bite#edit"
+
+  root "bite#index"
 end

@@ -1,5 +1,4 @@
 class BiteController < ApplicationController
-
   resources :bite
   before_action :set_bite, only: [:show, :edit, :update, :destroy]
 
