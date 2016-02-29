@@ -13,6 +13,7 @@ def create
     else
     format.html {render :new }
   end
+  end
 end
 
     def update
@@ -56,5 +57,4 @@ end
     def bite_params
       params.require(:bite).permit(:message, :user_id)
     end
-  end
 end
