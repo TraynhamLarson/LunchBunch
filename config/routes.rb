@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :restaurants
   devise_for :users
+
+  get 'restaurants' => 'restaurants#index'
 
   get "profiles/:id" => "profiles#show", as: :profile
 
@@ -10,12 +13,6 @@ Rails.application.routes.draw do
 end
 
 resources :relationships
-
-  get "show" => "bite#show"
-
-  get "new" => "bite#new"
-
-  get "edit" => "bite#edit"
 
   root "bites#index"
 end
