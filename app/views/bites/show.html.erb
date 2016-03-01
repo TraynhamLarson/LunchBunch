@@ -12,6 +12,6 @@
   <strong>User:</strong>
   <%= @bite.user.username %>
 </p>
-
+<%= render "shared/likes" %>
 <%= link_to 'Wait god no I didnt mean to do that!!!!', edit_bite_path(@bite) %> |
 <%= link_to 'Back2Bites', bites_path %>

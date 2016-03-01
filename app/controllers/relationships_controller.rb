@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
-  resources :relationships
+
 def create
-  @relationship = current_user.relationships.build(friend_id => params[:friend_id])
+  @relationship = current_user.relationships.build(:friend_id => params[:friend_id])
   if @relationship.save
     flash[:notice] = "Followed successfully."
   redirect_to request.referrer
@@ -16,8 +16,8 @@ def destroy
   flash[:notice] = "No longer following."
   redirect_to request.referrer
 end
-end
-  def relationsho_params
+
+def relationship_params
   params.require(:relationship).permit(:user_id, :friend_id)
-  end
+end
 end
