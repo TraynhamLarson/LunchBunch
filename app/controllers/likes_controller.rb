@@ -22,4 +22,4 @@ class LikesController < ApplicationController
       def set_bite
         @bite = Bite.find(params[:bite_id])
       end
-  end
+end
