@@ -2,7 +2,7 @@
 <% if @bite.errors.any? %>
     <div id="error_explanation">
       <h2>Wait. What the fork just happened?</h2>
-        <h3><%= pluralize(@bite.errors.count, "error") %> prohibited this shiznit from being saved:</h3>
+        <h3><%= pluralize(@bite.errors.count, "error") %> prohibited this bite from being saved:</h3>
       <ul>
         <% @bite.errors.full_messages.each do |message| %>
         <li><%= message %></li>

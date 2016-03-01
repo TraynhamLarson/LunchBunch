@@ -14,7 +14,6 @@ def create
     format.html {render :new }
     end
   end
-  end
 end
 
     def update
