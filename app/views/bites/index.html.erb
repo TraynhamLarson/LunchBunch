@@ -7,9 +7,10 @@
         <%= x.message %>
         <%= x.user.username %></p>
         <p><%= link_to 'Show', x %>
+            <% if user_signed_in? %>
         <%= link_to 'Edit', edit_bite_path(x) %>
         <%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-
+            <% end %>
     <% end %>
   </tbody>
 </table>

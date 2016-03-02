@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :restaurants
+  resources :relationships
   devise_for :users
 
   get 'restaurants' => 'restaurants#index'
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   resources :bites do
   resource :like
 end
-resources :relationships
+
 
   root "home#show"
 end
