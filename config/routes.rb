@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get "profiles" => "profiles#index"
 
+  get "bites" => "bites#index"
   get "home" => "home#show"
 
   resources :bites do
@@ -15,5 +16,5 @@ Rails.application.routes.draw do
 end
 resources :relationships
 
-  root "bites#index"
+  root "home#show"
 end
