@@ -17,6 +17,9 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
+        <% if restaurant.picture_file_name != nil %>
+        <%= image_tag restaurant.picture.url(:thumb), class: "img-responsive" %>
+        <% end %>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.cuisine %></td>
         <td><%= restaurant.price_range %></td>

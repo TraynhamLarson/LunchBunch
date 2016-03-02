@@ -5,6 +5,10 @@
   <%= @restaurant.name %>
 </p>
 
+<% if @restaurant.picture_file_name != nil %>
+<%= image_tag @restaurant.picture.url(:medium), class: "img-responsive" %>
+<% end %>
+
 <p>
   <strong>Cuisine:</strong>
   <%= @restaurant.cuisine %>

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :bites do
   resource :like
 end
-
 resources :relationships
 
   root "bites#index"
