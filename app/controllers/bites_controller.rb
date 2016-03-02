@@ -9,11 +9,10 @@ def create
 
   respond_to do |format|
     if @bite.save
-      format.html {redirect_to @bite, notice: 'Bite was sucessfully created.' }
+    format.html {redirect_to @bite, notice: 'Bite was sucessfully created.' }
     else
     format.html {render :new }
     end
-  end
   end
 end
 
@@ -31,8 +30,8 @@ end
         @bite.destroy
       respond_to do |format|
         format.html { redirect_to bites_url, notice: 'Bite was successfully destroyed.' }
-      end
     end
+  end
 
     def index
       @b = Bite.all
@@ -49,7 +48,7 @@ end
     end
 
 
-  private
+private
 
     def set_bite
       @bite = Bite.find(params[:id])
