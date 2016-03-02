@@ -16,6 +16,7 @@ def destroy
   flash[:notice] = "No longer following."
   redirect_to request.referrer
 end
+end
   def relationsho_params
   params.require(:relationship).permit(:user_id, :friend_id)
   end

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get "profiles" => "profiles#index"
 
+  get "home" => "home#show"
+
   resources :bites do
   resource :like
 end
